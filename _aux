@@ -109,5 +109,58 @@
 // dotnet restore
 // dotnet add package Microsoft.EntityFrameworkCore.Sqlite
 
-dotnet script archivo.cs
-dotnet tool install -g dotnet-script
+// dotnet script archivo.cs
+// dotnet tool install -g dotnet-script
+
+// // DELETE api/users/{id}
+//         [HttpDelete("{id}")]
+//         public IActionResult DeleteUser(int id)
+//         {
+//             var user = _context.Users.Find(id);
+//             if (user == null)
+//                 return NotFound();
+
+//             _context.Users.Remove(user);
+//             _context.SaveChanges();
+//             return NoContent();
+//         }
+
+//         // PUT api/users/{id}
+//         [HttpPut("{id}")]
+//         public IActionResult UpdateUser(int id, User updatedUser)
+//         {
+//             if (id != updatedUser.Id)
+//                 return BadRequest();
+
+//             var user = _context.Users.Find(id);
+//             if (user == null)
+//                 return NotFound();
+
+//             user.Name = updatedUser.Name;
+//             user.Email = updatedUser.Email;
+
+//             _context.SaveChanges();
+//             return NoContent();
+//         }
+
+
+// git remote add origin https://github.com/tuusuario/tu-repo.git
+// git branch -M main
+// git push -u origin main
+
+// git pull origin main --allow-unrelated-histories
+
+// dotnet ef migrations add InitialCreate
+// dotnet ef database update
+// dotnet ef database update 0
+// dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+
+// sqlcmd -S <Servidor> -d <BaseDeDatos> -U <Usuario> -P <Contraseña>
+
+//ima1256server/AccessControlDB CloudSA1868eb93 rh*617/latH
+
+//sqlcmd -S ima1256server.database.windows.net -d AccessControlDB -U CloudSA1868eb93 -P rh*617/latH
+
+//Server=tcp:ima1256server.database.windows.net,1433;Initial Catalog=AccessControlDB;Persist Security Info=False;User ID=CloudSA1868eb93;Password=rh*617/latH;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
