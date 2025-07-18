@@ -164,3 +164,36 @@
 //Server=tcp:ima1256server.database.windows.net,1433;Initial Catalog=AccessControlDB;Persist Security Info=False;User ID=CloudSA1868eb93;Password=rh*617/latH;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+// docker build -t mi-backend-net .
+// docker run -p 5000:5000 mi-backend-net
+
+// dotnet new sln -n SmartAccess
+// cd SmartAccess
+
+// # Crear proyectos
+// dotnet new webapi -n SmartAccess.API
+// dotnet new classlib -n SmartAccess.Application
+// dotnet new classlib -n SmartAccess.Domain
+// dotnet new classlib -n SmartAccess.Infrastructure
+// dotnet new classlib -n SmartAccess.Shared
+// dotnet new xunit -n SmartAccess.Tests
+
+// # Agregar los proyectos a la solución
+// dotnet sln add SmartAccess.API/
+// dotnet sln add SmartAccess.Application/
+// dotnet sln add SmartAccess.Domain/
+// dotnet sln add SmartAccess.Infrastructure/
+// dotnet sln add SmartAccess.Shared/
+// dotnet sln add SmartAccess.Tests/
+
+// # Añadir referencias
+// dotnet add SmartAccess.API reference SmartAccess.Application
+// dotnet add SmartAccess.Application reference SmartAccess.Domain
+// dotnet add SmartAccess.Infrastructure reference SmartAccess.Application
+// dotnet add SmartAccess.Infrastructure reference SmartAccess.Domain
+// dotnet add SmartAccess.Application reference SmartAccess.Shared
+// dotnet add SmartAccess.API reference SmartAccess.Shared
+// dotnet add SmartAccess.Tests reference SmartAccess.Domain
+// dotnet add SmartAccess.Tests reference SmartAccess.Application
+
